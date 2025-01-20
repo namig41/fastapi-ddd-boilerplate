@@ -1,6 +1,11 @@
 from functools import lru_cache
 from punq import Container, Scope
 
+from app.infrastructure.logger.base import ILogger
+from app.infrastructure.logger.factory import create_logger_dependency
+from app.settings.config import Settings
+from app.settings.config import settings
+
 
 @lru_cache(1)
 def init_container() -> Container:
@@ -14,7 +19,7 @@ def _init_container() -> Container:
     # Register global settings
     container.register(
         Settings,
-        instance=config,
+        instance=settings,
         scope=Scope.singleton,
     )
 

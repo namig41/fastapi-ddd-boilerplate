@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 
-from settings.config import config
+from settings.config import settings
 
 
 @dataclass
 class CacheConfig:
-    host: str = config.CACHE_HOST
-    port: str = config.CACHE_PORT
+    host: str = settings.CACHE_HOST
+    port: str = settings.CACHE_PORT
 
     def get_url(self, schema: str) -> str:
         return f"{schema}://{self.host}:{self.port}"

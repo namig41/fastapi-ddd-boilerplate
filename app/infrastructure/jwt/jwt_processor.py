@@ -13,7 +13,7 @@ from infrastructure.jwt.base import (
     JWTToken,
 )
 from infrastructure.jwt.config import JWTConfig
-from settings.config import config
+from settings.config import settings
 
 
 @dataclass

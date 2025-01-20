@@ -1,14 +1,14 @@
 from dataclasses import dataclass
 
-from settings.config import config
+from settings.config import settings
 
 
 @dataclass(frozen=True)
 class MessageBrokerConfig:
-    host: str = config.MESSAGE_BROKER_HOST
-    port: int = config.MESSAGE_BROKER_PORT
-    login: str = config.MESSAGE_BROKER_USER
-    password: str = config.MESSAGE_BROKER_PASSWORD
+    host: str = settings.MESSAGE_BROKER_HOST
+    port: int = settings.MESSAGE_BROKER_PORT
+    login: str = settings.MESSAGE_BROKER_USER
+    password: str = settings.MESSAGE_BROKER_PASSWORD
 
     @property
     def get_url(self) -> str:

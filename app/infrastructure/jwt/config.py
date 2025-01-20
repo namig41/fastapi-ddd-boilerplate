@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Literal
 
-from settings.config import config
+from settings.config import settings
 
 
 Algorithm = Literal[
@@ -16,5 +16,5 @@ Algorithm = Literal[
 
 @dataclass(frozen=True)
 class JWTConfig:
-    key: str = config.JWT_SECRET_KEY
-    algorithm: Algorithm = config.JWT_ALGORITHM
+    key: str = settings.JWT_SECRET_KEY
+    algorithm: Algorithm = settings.JWT_ALGORITHM
