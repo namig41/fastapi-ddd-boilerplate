@@ -7,10 +7,13 @@ requires-python = ">=3.12"
 dependencies = [
     "aioredis>=2.0.1",
     "black>=24.10.0",
+    "faker>=33.3.1",
     "fastapi>=0.115.6",
     "pre-commit>=4.0.1",
     "punq>=0.7.0",
     "pydantic-settings>=2.7.1",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.2",
     "sqlalchemy>=2.0.37",
     "uvicorn>=0.34.0",
 ]

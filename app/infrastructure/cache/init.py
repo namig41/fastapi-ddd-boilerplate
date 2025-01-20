@@ -1,5 +1,7 @@
-from app.infrastructure.cache.config import CacheConfig
 import aioredis
 
-def init_redis(cache_config: CacheConfig) -> Redis:
+from infrastructure.cache.config import CacheConfig
+
+
+def init_redis(cache_config: CacheConfig) -> aioredis.Redis:
     return aioredis.from_url(cache_config.get_url("redis"))

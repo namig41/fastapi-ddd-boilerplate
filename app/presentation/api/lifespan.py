@@ -7,9 +7,8 @@ from punq import Container
 from bootstrap.di import init_container
 
 
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    container: Container = init_container()
+    container: Container = init_container() # noqa
 
     yield

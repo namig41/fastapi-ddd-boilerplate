@@ -1,8 +1,9 @@
 from functools import lru_cache
-from app.infrastructure.jwt.base import BaseJWTProcessor
-from app.infrastructure.jwt.config import JWTConfig
-from app.infrastructure.jwt.jwt_processor import PyJWTProcessor
-from app.settings.config import settings
+
+from infrastructure.jwt.base import BaseJWTProcessor
+from infrastructure.jwt.config import JWTConfig
+from infrastructure.jwt.jwt_processor import PyJWTProcessor
+from settings.config import settings
 
 
 @lru_cache(1)

@@ -1,12 +1,10 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 
 import uvicorn
 
-from app.presentation.api import lifespan
-from app.presentation.api.middleware import apply_middleware
-from app.presentation.api.router import apply_routes
-from presentation.api.healthcheck.router import router as healthcheck_router
+from presentation.api import lifespan
+from presentation.api.middleware import apply_middleware
+from presentation.api.router import apply_routes
 from settings.config import settings
 
 

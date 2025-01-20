@@ -1,7 +1,4 @@
 import logging
-import sys
-from functools import lru_cache
-from typing import TextIO
 
 from infrastructure.logger.base import ILogger
 
@@ -19,4 +16,3 @@ class Logger(ILogger):
 
     def debug(self, message: str) -> None:
         self.logger.debug(message)
-

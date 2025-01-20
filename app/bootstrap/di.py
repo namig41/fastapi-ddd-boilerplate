@@ -1,10 +1,16 @@
 from functools import lru_cache
-from punq import Container, Scope
 
-from app.infrastructure.logger.base import ILogger
-from app.infrastructure.logger.factory import create_logger_dependency
-from app.settings.config import Settings
-from app.settings.config import settings
+from punq import (
+    Container,
+    Scope,
+)
+
+from infrastructure.logger.base import ILogger
+from infrastructure.logger.factory import create_logger_dependency
+from settings.config import (
+    Settings,
+    settings,
+)
 
 
 @lru_cache(1)

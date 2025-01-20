@@ -1,9 +1,10 @@
-from functools import lru_cache
 import logging
 import sys
+from functools import lru_cache
 from typing import TextIO
 
-from app.infrastructure.logger.base import ILogger
+from infrastructure.logger.base import ILogger
+
 
 def logger_factory(name: str, level: int, stream: TextIO) -> logging.Logger:
     logger = logging.getLogger(name)
@@ -21,6 +22,7 @@ def logger_factory(name: str, level: int, stream: TextIO) -> logging.Logger:
         logger.addHandler(handler)
 
     return logger
+
 
 @lru_cache(1)
 def create_logger_dependency() -> ILogger:

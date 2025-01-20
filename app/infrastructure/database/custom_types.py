@@ -1,4 +1,7 @@
-from typing import Any, TypeVar
+from typing import (
+    Any,
+    TypeVar,
+)
 
 from sqlalchemy import (
     Dialect,
@@ -6,7 +9,9 @@ from sqlalchemy import (
 )
 from sqlalchemy.types import TypeDecorator
 
-CUSTOM_TYPE = TypeVar('CUSTOM_TYPE')
+
+CUSTOM_TYPE = TypeVar("CUSTOM_TYPE")
+
 
 class CustomerTypes(TypeDecorator):
     impl = String

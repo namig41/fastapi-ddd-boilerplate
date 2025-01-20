@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from functools import lru_cache
 
 import jwt
 
@@ -13,7 +12,6 @@ from infrastructure.jwt.base import (
     JWTToken,
 )
 from infrastructure.jwt.config import JWTConfig
-from settings.config import settings
 
 
 @dataclass
@@ -34,6 +32,3 @@ class PyJWTProcessor(BaseJWTProcessor):
             raise JWTExpiredException()
         except jwt.DecodeError:
             raise JWTDecodeException()
-
-
-
