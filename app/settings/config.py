@@ -30,7 +30,7 @@ class Settings(BaseSettings):
     MESSAGE_BROKER_UI_PORT: int
     MESSAGE_BROKER_USER: str
     MESSAGE_BROKER_PASSWORD: str
-    
+
     SMTP_HOST: str
     SMTP_PORT: int
     SMTP_USERNAME: str

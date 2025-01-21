@@ -26,7 +26,8 @@ class BaseRepositoryProtocol(
     async def create(self, create_object: CreateSchemaType) -> ReadSchemaType: ...
 
     async def bulk_create(
-        self, create_objects: list[CreateSchemaType],
+        self,
+        create_objects: list[CreateSchemaType],
     ) -> list[ReadSchemaType]: ...
 
     async def update(self, update_object: UpdateSchemaType) -> ReadSchemaType: ...

@@ -19,7 +19,9 @@ R = TypeVar("R")
 
 
 async def run_in_processpool(
-    fn: Callable[P, R], *args: P.args, **kwargs: P.kwargs,
+    fn: Callable[P, R],
+    *args: P.args,
+    **kwargs: P.kwargs,
 ) -> R:
     """
     Запуск функции в отдельном процессе.

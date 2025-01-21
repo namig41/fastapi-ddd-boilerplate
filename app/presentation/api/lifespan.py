@@ -9,6 +9,6 @@ from bootstrap.di import init_container
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    container: Container = init_container() # noqa
+    container: Container = init_container()  # noqa
 
     yield

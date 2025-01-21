@@ -1,16 +1,17 @@
-from functools import lru_cache, partial
-
-from aioredis import Redis
-from punq import (
-    Container,
-    Scope,
+from functools import (
+    lru_cache,
+    partial,
 )
 
 from aio_pika.abc import (
     AbstractChannel,
     AbstractConnection,
 )
-
+from aioredis import Redis
+from punq import (
+    Container,
+    Scope,
+)
 from sqlalchemy.ext.asyncio.engine import AsyncEngine
 
 from infrastructure.cache.config import CacheConfig
@@ -111,5 +112,5 @@ def _init_container() -> Container:
         RabbitMQMessageBroker,
         scope=Scope.singleton,
     )
-    
+
     return container

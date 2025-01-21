@@ -1,7 +1,5 @@
-from dataclasses import dataclass
 import smtplib
-import ssl
-from pathlib import Path
+from dataclasses import dataclass
 from typing import Self
 
 from infrastructure.email.config import SMTPConfig
@@ -13,7 +11,7 @@ class SMTPEmailService:
     """
     Сервис для оправки email с помощью протокола SMTP.
     """
-    
+
     smtp_config: SMTPConfig
 
     def __init__(self, settings: Settings) -> None:
