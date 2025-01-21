@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     JWT_ALGORITHM: str
 
     CACHE_HOST: str
-    CACHE_PORT: str
+    CACHE_PORT: int
 
     MESSAGE_BROKER_HOST: str
     MESSAGE_BROKER_PORT: int

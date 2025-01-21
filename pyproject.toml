@@ -6,7 +6,6 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "aio-pika>=9.5.4",
-    "aioredis>=2.0.1",
     "alembic>=1.14.1",
     "asyncpg>=0.30.0",
     "fastapi>=0.115.6",
@@ -18,8 +17,10 @@ dependencies = [
     "pydantic-settings>=2.7.1",
     "pyjwt>=2.10.1",
     "python-multipart>=0.0.20",
+    "redis>=5.2.1",
     "setuptools>=75.8.0",
     "sqlalchemy>=2.0.37",
+    "uuid6>=2024.7.10",
     "uvicorn>=0.34.0",
 ]
 

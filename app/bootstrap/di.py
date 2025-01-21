@@ -7,15 +7,15 @@ from aio_pika.abc import (
     AbstractChannel,
     AbstractConnection,
 )
-from aioredis import Redis
 from punq import (
     Container,
     Scope,
 )
+from redis.asyncio import Redis
 from sqlalchemy.ext.asyncio.engine import AsyncEngine
 
 from infrastructure.cache.config import CacheConfig
-from infrastructure.cache.init import init_redis
+from infrastructure.cache.init import init_cache
 from infrastructure.database.config import DBConfig
 from infrastructure.database.init import init_database
 from infrastructure.jwt.base import BaseJWTProcessor
@@ -90,7 +90,7 @@ def _init_container() -> Container:
     cache_config: CacheConfig = CacheConfig()
     container.register(
         Redis,
-        factory=partial(init_redis, cache_config=cache_config),
+        factory=partial(init_cache, cache_config=cache_config),
         scope=Scope.singleton,
     )
 

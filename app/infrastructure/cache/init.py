@@ -1,7 +1,7 @@
-import aioredis
+from redis.asyncio import Redis
 
 from infrastructure.cache.config import CacheConfig
 
 
-def init_redis(cache_config: CacheConfig) -> aioredis.Redis:
-    return aioredis.from_url(cache_config.get_url("redis"))
+def init_cache(cache_config: CacheConfig) -> Redis:
+    return Redis(host=cache_config.host, port=cache_config.port)

@@ -4,8 +4,8 @@ from presentation.api.healthcheck.schemas import HealthcheckResponseSchema
 
 
 router = APIRouter(
-    prefix="/healthcheck",
-    tags=["Healthcheck"],
+    prefix="/ping",
+    tags=["ping"],
 )
 
 
