@@ -13,8 +13,9 @@ class Settings(BaseSettings):
     DATABASE_NAME: str
     DATABASE_TEST_NAME: str
     DATABASE_HOST: str
-    DATABASE_PORT: str
+    DATABASE_PORT: int
     DATABASE_PROVIDER: str
+    DATABASE_SCHEME: str
 
     PGADMIN_EMAIL: str
     PGADMIN_PASSWORD: str
