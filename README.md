@@ -9,7 +9,6 @@ A boilerplate project for building scalable and maintainable applications using 
 - **Async Support**: Built-in support for asynchronous operations.
 - **Environment Configuration**: Centralized `.env` for easy environment variable management.
 - **Dependency Injection**: Simplified DI setup for managing dependencies.
-- **Redis Integration**: Ready-to-use Redis setup with `aioredis` or `redis-py`.
 
 ## Folder Structure
 
