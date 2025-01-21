@@ -1,19 +1,24 @@
 [project]
 name = "fastapi-ddd-boilerplate"
 version = "0.1.0"
-description = "Add your description here"
+description = ""
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "aio-pika>=9.5.4",
     "aioredis>=2.0.1",
-    "black>=24.10.0",
-    "faker>=33.3.1",
+    "alembic>=1.14.1",
+    "asyncpg>=0.30.0",
     "fastapi>=0.115.6",
-    "pre-commit>=4.0.1",
+    "httpx>=0.28.1",
+    "jose>=1.0.0",
+    "orjson>=3.10.15",
+    "psycopg2>=2.9.10",
     "punq>=0.7.0",
     "pydantic-settings>=2.7.1",
-    "pytest>=8.3.4",
-    "pytest-asyncio>=0.25.2",
+    "pyjwt>=2.10.1",
+    "python-multipart>=0.0.20",
+    "setuptools>=75.8.0",
     "sqlalchemy>=2.0.37",
     "uvicorn>=0.34.0",
 ]
@@ -49,4 +54,13 @@ sections=[
     "THIRDPARTY",
     "FIRSTPARTY",
     "LOCALFOLDER",
+]
+
+[dependency-groups]
+dev = [
+    "black>=24.10.0",
+    "faker>=33.3.1",
+    "pre-commit>=4.1.0",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.2",
 ]

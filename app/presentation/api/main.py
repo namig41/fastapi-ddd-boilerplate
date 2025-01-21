@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 import uvicorn
 
-from presentation.api import lifespan
+from presentation.api.lifespan import lifespan
 from presentation.api.middleware import apply_middleware
 from presentation.api.router import apply_routes
 from settings.config import settings
