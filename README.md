@@ -46,12 +46,7 @@ fastapi-ddd-boilerplate/
    ```
 
 3. **Setup Environment Variables**:
-   Create a `.env` file in the root directory and configure the required settings:
-   ```env
-   APP_ENV=development
-   DATABASE_URL=sqlite:///./app.db
-   REDIS_URL=redis://localhost:6379
-   ```
+   Create a `.env` file in the root directory and configure the required settings.
 
 4. **Run Database Migrations** (if applicable):
    ```bash
