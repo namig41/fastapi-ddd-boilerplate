@@ -70,4 +70,4 @@ drop:
 
 .PHONY: clean
 clean:
-	${DC} -f ${DATABASE_FILE} -f ${APP_FILE} -f ${CACHE_FILE} -f ${MESSAGE_BROKER_FILE} rm -f
+	${DC} -f ${DATABASE_FILE} -f ${APP_FILE} -f ${CACHE_FILE} -f ${MESSAGE_BROKER_FILE} down --volumes --remove-orphans
