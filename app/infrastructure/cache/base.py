@@ -16,7 +16,7 @@ Value = TypeVar("Value")
 class ICacheService(ABC, Generic[KeyValue, Value]):
 
     @abstractmethod
-    async def get_value(self, key_value: KeyValue) -> Optional[Value]:
+    async def get_value(self, key_value: KeyValue) -> Value | None:
         """Получить значение по ключу."""
         ...
 
