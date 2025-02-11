@@ -10,7 +10,7 @@ from settings.config import settings
 
 def create_app() -> FastAPI:
     app: FastAPI = FastAPI(
-        title="WeatherAPI",
+        title="ServiceName",
         docs_url="/api/docs/",
         debug=True,
         lifespan=lifespan,
