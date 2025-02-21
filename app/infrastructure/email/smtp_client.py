@@ -3,7 +3,6 @@ from dataclasses import dataclass
 from typing import Self
 
 from infrastructure.email.config import SMTPConfig
-from settings.config import Settings
 
 
 @dataclass
@@ -13,9 +12,6 @@ class SMTPEmailService:
     """
 
     smtp_config: SMTPConfig
-
-    def __init__(self, settings: Settings) -> None:
-        self.settings = settings
 
     async def send(self: Self, to_email: str, message: str) -> None:
         """

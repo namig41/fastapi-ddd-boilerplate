@@ -29,7 +29,7 @@ class RabbitMQMessageBroker(BaseMessageBroker):
         await self._publish_message(rq_message, routing_key, exchange_name)
 
     async def declare_exchange(self, exchange_name: str) -> None:
-        await self.channel.declare_exchange(exchange_name, aio_pika.ExchangeType.TOPIC)
+        await self.channel.declare_exchange(exchange_name, aio_pika.ExchangeType.DIRECT)
 
     async def _publish_message(
         self,

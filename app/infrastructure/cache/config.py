@@ -7,6 +7,8 @@ from settings.config import settings
 class CacheConfig:
     host: str = settings.CACHE_HOST
     port: int = settings.CACHE_PORT
+    provider: str = settings.CACHE_PROVIDER
 
-    def get_url(self, schema: str) -> str:
-        return f"{schema}://{self.host}:{self.port}"
+    @property
+    def get_url(self) -> str:
+        return f"{self.provider}://{self.host}:{self.port}"

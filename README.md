@@ -42,7 +42,7 @@ fastapi-ddd-boilerplate/
 
 2. **Install Dependencies**:
    ```bash
-   uv install
+   uv sync
    ```
 
 3. **Setup Environment Variables**:

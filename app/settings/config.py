@@ -24,6 +24,7 @@ class Settings(BaseSettings):
 
     CACHE_HOST: str
     CACHE_PORT: int
+    CACHE_PROVIDER: str
 
     MESSAGE_BROKER_HOST: str
     MESSAGE_BROKER_PORT: int

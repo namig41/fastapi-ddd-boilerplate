@@ -6,12 +6,13 @@ from dataclasses import (
 from datetime import (
     datetime,
     timedelta,
-    timezone,
 )
 from typing import (
     Any,
     TypeAlias,
 )
+
+from tools.time_utils import ts_now
 
 from domain.entities.base import BaseEntity
 from infrastructure.exceptions.jwt_token import JWTExpiredException
@@ -47,7 +48,7 @@ class AccessToken(BaseEntity):
     expires_in: datetime
 
     def validate(self) -> None:
-        if datetime.now(timezone.utc) > self.expires_in:
+        if ts_now() > self.expires_in:
             raise JWTExpiredException()
 
     @classmethod
@@ -58,7 +59,7 @@ class AccessToken(BaseEntity):
     ) -> "AccessToken":
         return cls(
             payload=payload,
-            expires_in=datetime.now(timezone.utc) + timedelta(minutes=minutes),
+            expires_in=ts_now() + timedelta(minutes=minutes),
         )
 
     @classmethod

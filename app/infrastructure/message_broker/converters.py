@@ -1,11 +1,8 @@
-from datetime import (
-    datetime,
-    timezone,
-)
 from uuid import UUID
 
 import aio_pika
 import orjson
+from tools.time_utils import ts_now
 
 from infrastructure.message_broker.message import Message
 
@@ -30,7 +27,7 @@ def from_aio_pika_message(aio_message: aio_pika.Message) -> Message:
             id=UUID(aio_message.message_id),
             data=payload.get("data", ""),
             message_type=payload.get("message_type", "message"),
-            created_at=datetime.now(timezone.utc),
+            created_at=ts_now(),
         )
     except (orjson.JSONDecodeError, ValueError, KeyError) as e:
         raise ValueError(f"Ошибка при декодировании сообщения: {e}") from e
