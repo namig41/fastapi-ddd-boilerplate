@@ -18,6 +18,8 @@ from infrastructure.cache.config import CacheConfig
 from infrastructure.cache.init import init_cache
 from infrastructure.database.config import DBConfig
 from infrastructure.database.init import init_database
+from infrastructure.email.config import SMTPConfig
+from infrastructure.email.smtp_client import SMTPEmailService
 from infrastructure.jwt.base import BaseJWTProcessor
 from infrastructure.jwt.config import JWTConfig
 from infrastructure.jwt.jwt_processor import PyJWTProcessor
@@ -110,6 +112,19 @@ def _init_container() -> Container:
     container.register(
         BaseMessageBroker,
         RabbitMQMessageBroker,
+        scope=Scope.singleton,
+    )
+
+    # Register Email
+    smtp_config: SMTPConfig = SMTPConfig()
+    container.register(
+        SMTPConfig,
+        instance=smtp_config,
+        scope=Scope.singleton,
+    )
+
+    container.register(
+        SMTPEmailService,
         scope=Scope.singleton,
     )
 
